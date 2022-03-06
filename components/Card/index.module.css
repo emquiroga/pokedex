@@ -10,6 +10,7 @@
     align-items: center;
     background-color: blue;
     overflow: hidden;
+    transition: all ease-in-out 250ms;
 }
 .card-title {
     font-size: 1.5rem;
@@ -39,6 +40,6 @@
     transform: rotate(135deg);
     gap: 5px;
     position: absolute;
-    bottom: -1rem;
+    bottom: -.5rem;
     left: -1.5rem;
 }
