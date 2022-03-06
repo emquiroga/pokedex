@@ -1,5 +1,6 @@
 .card-wrapper {
     width: calc(100% - 1rem);
+    min-height: 400px;
     height: calc(100% - 1rem);
     margin: .5rem auto;
     padding: 1rem;
@@ -20,15 +21,24 @@
 .card-img {
     margin: 1rem auto;
 }
+.card-id {
+    margin: 0;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
 .types-wrapper {
     width: 50%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-content: center;
-    align-items: center;
-    transform: rotate(-45deg);
+    align-items: flex-start;
+    transform: rotate(135deg);
     gap: 5px;
     position: absolute;
-    bottom: .5rem;
-    left: 0;
+    bottom: -1rem;
+    left: -1.5rem;
 }
