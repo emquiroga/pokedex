@@ -10,3 +10,25 @@
     background-color: blue;
     overflow: hidden;
 }
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+}
+.card-img {
+    margin: 1rem auto;
+}
+.types-wrapper {
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-45deg);
+    gap: 5px;
+    position: absolute;
+    bottom: .5rem;
+    left: 0;
+}

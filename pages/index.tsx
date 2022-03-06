@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   }
 
   useEffect(() => {
-    if (searchValue.length > 3) {
+    if (searchValue.length > 2) {
       getPokemonByName(searchValue)
         .then(data => {
           const fetchedData = fetchPokeInfo(data.data);
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
         {
           pokemon && (
             <PokedexLayout>
-              <Card id={pokemon.id} name={pokemon.name} image={pokemon.front_default} />
+              <Card id={pokemon.id} name={pokemon.name} image={pokemon.front_default} types={pokemon.types} />
             </PokedexLayout>
           )
         }

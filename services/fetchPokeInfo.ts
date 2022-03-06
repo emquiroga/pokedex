@@ -2,6 +2,7 @@ export type PokemonInfo = {
     id: number;
     name: string;
     front_default: string;
+    types: Array<{}>;
 };
 
 interface PokemonData {
@@ -10,9 +11,10 @@ interface PokemonData {
     sprites: {
         front_default: string;
     }
+    types: Array<{}>;
 }
 
 export const fetchPokeInfo = (data: PokemonData) => {
-    const { id, name, sprites: { front_default } } = data;
-    return { id, name, front_default };
+    const { id, name, sprites: { front_default }, types } = data;
+    return { id, name, front_default, types };
 }
