@@ -2,7 +2,13 @@ export type PokemonInfo = {
     id: number;
     name: string;
     front_default: string;
-    types: Array<{}>;
+    types: [{
+        slot: number
+        type: {
+            name: string
+            url: string
+        }
+    }]
 };
 
 interface PokemonData {
@@ -11,7 +17,13 @@ interface PokemonData {
     sprites: {
         front_default: string;
     }
-    types: Array<{}>;
+    types: [{
+        slot: number
+        type: {
+            name: string
+            url: string
+        }
+    }]
 }
 
 export const fetchPokeInfo = (data: PokemonData) => {
