@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { TypeIcon } from "../TypeIcon";
 import styles from "./index.module.css"
 interface CardTypes {
@@ -24,13 +25,14 @@ export const Card = ({ name, image, id, types }: CardTypes) => {
                     <div className={styles["types-wrapper"]}>
                         {
                             types.map(({ type: { name } }) => {
-                                return <TypeIcon key={undefined} type={name} />
+                                return <TypeIcon key={name} type={name} />
                             })
                         }
                     </div>
                 )
             }
             <p className={styles["card-id"]}>{id}</p>
+            <Link href={`/pokemoninfo/${id}`}>See more</Link>
         </div>
     );
 }
