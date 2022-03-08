@@ -1,4 +1,4 @@
-export type PokemonInfo = {
+export type CardData = {
     id: number;
     name: string;
     front_default: string;
@@ -26,7 +26,7 @@ interface PokemonData {
     }]
 }
 
-export const fetchPokeInfo = (data: PokemonData) => {
+export const fetchCardData = (data: PokemonData) => {
     const { id, name, sprites: { front_default }, types } = data;
     return { id, name, front_default, types };
 }

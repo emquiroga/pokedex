@@ -32,7 +32,7 @@ export const Card = ({ name, image, id, types }: CardTypes) => {
                 )
             }
             <p className={styles["card-id"]}>{id}</p>
-            <Link href={`/pokemoninfo/${id}`}>See more</Link>
+            <Link href={`/pokemon/${id}`}>See more</Link>
         </div>
     );
 }

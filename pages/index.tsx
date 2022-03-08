@@ -4,14 +4,14 @@ import Head from 'next/head'
 import { Card } from "../components/Card";
 import { PokedexLayout } from "../components/PokedexLayout";
 import { useDebounceSearch } from "../hooks/useDebounceSearch";
-import { fetchPokeInfo, PokemonInfo } from "../services/fetchPokeInfo";
+import { fetchCardData, CardData } from "../services/fetchCardData";
 import { getPokemonByName } from "../services/pokeService";
 
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   const [search, setSearch] = useState("");
-  const [pokemon, setPokemon] = useState<PokemonInfo | null>(null);
+  const [pokemon, setPokemon] = useState<CardData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState<boolean | null>(false);
 
@@ -29,8 +29,7 @@ const Home: NextPage = () => {
     if (searchValue.length > 2) {
       getPokemonByName(searchValue)
         .then(data => {
-          console.log(data)
-          const fetchedData = fetchPokeInfo(data.data);
+          const fetchedData = fetchCardData(data.data);
           setPokemon(fetchedData);
           setError(null)
         })
