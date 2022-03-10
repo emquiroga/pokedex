@@ -8,8 +8,8 @@ import { fetchCardData, CardData } from "../services/fetchCardData";
 import { getPokemonByName } from "../services/pokeService";
 
 import styles from '../styles/Home.module.css'
-import Link from "next/link";
-import { pokemonGenerations } from "../constants/constants";
+import { Nav } from "../components/Nav";
+import { SearchInput } from "../components/SearchInput";
 
 const Home: NextPage = () => {
   const [search, setSearch] = useState("");
@@ -17,9 +17,9 @@ const Home: NextPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState<boolean | null>(false);
 
-  const handlePokedex = () => {
-    setIsOpen(!isOpen);
-  }
+  // const handlePokedex = () => {
+  //   setIsOpen(!isOpen);
+  // }
 
   const searchValue = useDebounceSearch(search.toLowerCase(), 400);
 
@@ -50,23 +50,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <nav>
-          <ul>
-            {
-              pokemonGenerations.map((generation) => (
-                <li key={generation}>
-                  <Link href={`/generation/${generation}`}>
-                    <a>Generation {generation}</a>
-                  </Link>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
+        <Nav />
       </header>
       <main className={styles.main}>
         <h1 className={styles.title}> Pokedex </h1>
-        <input type="text" placeholder="Find your pokemon by name" onChange={handleSearch} />
+        <SearchInput handleChange={handleSearch} placeholder="Search your Pokémon here!" />
         {
           error && (
             <div>{error}</div>
