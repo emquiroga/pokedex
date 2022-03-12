@@ -7,19 +7,34 @@ import styles from '../../styles/Home.module.css'
 import { getGenerationList } from "../../services/pokeService";
 import { generationRanges } from "../../helpers/generationRanges";
 import { Nav } from "../../components/Nav";
+import { Table } from "../../components/Table";
+
+type TableData = [
+    {
+        name: string,
+        url: string
+    }
+]
 
 
 const GenerationList: NextPage = () => {
     const router = useRouter()
     const { gen } = router.query;
 
+    const [generation, setGeneration] = useState<TableData | null>(null)
 
 
     useEffect(() => {
         const { start, end } = generationRanges(gen as string);
-        getGenerationList(start, end)
-            .then(data => console.log(data))
-    })
+        if (gen) {
+            getGenerationList(start, end)
+            .then(data => {
+                setGeneration(data.data.results)
+            })
+        }
+    }, [gen])
+
+    const TITLES = ['Name', 'See more'];
 
 
     return (
@@ -35,6 +50,12 @@ const GenerationList: NextPage = () => {
             <main className={styles.main}>
                 <h1 className={styles.title}> Selected Generation: </h1>
                 <p>{gen}</p>
+                <hr />
+                {
+                    generation && (
+                        <Table titles={TITLES} data={generation}/>
+                    )
+                }
             </main>
         </div>
     )

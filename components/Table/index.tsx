@@ -1,6 +1,16 @@
+import Link from "next/link";
 interface TableProps {
     titles: string[];
-    data: string[];
+    data: [
+        {
+            name: string;
+            url: string;
+        }
+    ]
+}
+
+const getPokeNumber = (url: string) => {
+    return url.split("/")[6];
 }
 
 export const Table = ({titles, data}: TableProps) => {
@@ -9,18 +19,21 @@ export const Table = ({titles, data}: TableProps) => {
             <thead>
                     <tr>
                         {                    
-                            titles.map((title, index) => (<th  key={index} className="px-4 py-2">{title}</th>))
+                            titles.map((title, index) => (<th key={index} className="border px-4 py-2">{title}</th>))
                         }   
                     </tr>
             </thead>
             <tbody>
-                {
-                    data.map((row, index) => ({
-                        return(
-                            <tr key={index}>
-                        )
-                    }))
-                }
+                        {
+                            data.map((item, index) => {
+                                return(
+                                    <tr key={index}>
+                                        <td className="border px-4 py-2">{item.name}</td>
+                                        <td className="border px-4 py-2"><Link href={`/pokemon/${getPokeNumber(item.url)}`}>See more</Link></td>
+                                    </tr>
+                                )
+                            })
+                        }
             </tbody>
         </table>
     )
