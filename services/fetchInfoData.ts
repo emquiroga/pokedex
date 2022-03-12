@@ -1,4 +1,9 @@
 export type InfoData = {
+    id: number;
+    name: string;
+    sprites: {
+        front_default: string;
+    }
     height: number;
     weight: number;
     abilities: [{
@@ -22,6 +27,6 @@ export type InfoData = {
 }
 
 export const fetchInfoData = (data: InfoData) => {
-    const { height, weight, abilities, stats, base_experience, types } = data;
-    return { height, weight, abilities, stats, base_experience, types };
+    const { id, name, sprites: { front_default }, height, weight, abilities, stats, base_experience, types } = data;
+    return { id, name, front_default, height, weight, abilities, stats, base_experience, types };
 }
