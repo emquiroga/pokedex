@@ -1,58 +1,64 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true
+    "browser": false,
+    "es2021": true,
+    "node": true
   },
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "plugin:prettier/recommended",
+    "next",
+    "next/core-web-vitals"
+  ],
+  "plugins": ["react", "prettier", "import", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true,
-      "modules": true
+      "jsx": true
     },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "prettier",
-    "import"
-  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
-    "arrow-spacing": "error",
+    "no-console": "warn",
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "trailingComma": "all",
-        "printWidth": 120,
-        "tabWidth": 2,
-        "useTabs": false,
-        "semi": true,
-        "bracketSpacing": true,
-        "jsxBracketSameLine": false,
-        "jsxSingleQuote": false,
-        "arrowParens": "avoid",
-        "parser": "babylon"
-      }
-    ],
-    "no-unused-vars": [
       "warn",
       {
-        "vars": "all",
+        "printWidth": 100,
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "semi": true,
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "arrowParens": "always",
+        "endOfLine":"auto"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
         "args": "after-used",
         "ignoreRestSiblings": false,
-        "caughtErrors": "none"
+        "argsIgnorePattern": "^_.*?$"
       }
     ],
-    "import/order": [
-      "warn",
-      {
-        "newlines-between": "always"
-      }
-    ],
+    "import/order": ["warn", {
+      "groups": ["type", "builtin", "object", "external", "internal", "parent", "sibling", "index"],
+      "pathGroups": [{
+        "pattern": "~/**",
+        "group": "external",
+        "position": "after"
+      }],
+      "newlines-between": "always"
+    }],
     "react/self-closing-comp": "warn",
-    "react-hooks/rules-of-hooks": "warn",
     "react/jsx-sort-props": [
       "warn",
       {
@@ -63,34 +69,10 @@
       }
     ],
     "padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": "return"
-      },
-      {
-        "blankLine": "always",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": "*"
-      },
-      {
-        "blankLine": "any",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": [
-          "const",
-          "let",
-          "var"
-        ]
-      }
+      "warn",
+      {"blankLine": "always", "prev": "*", "next": "return"},
+      {"blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
+      {"blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
     ]
   }
 }
