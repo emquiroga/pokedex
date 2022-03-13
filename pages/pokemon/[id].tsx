@@ -8,7 +8,7 @@ import { getPokemonByNumber } from "../../services/pokeService";
 import styles from "../../styles/Home.module.css";
 import { fetchInfoData, InfoData } from "../../services/fetchInfoData";
 import { Nav } from "../../components/Nav";
-import { InfoCard } from "../../components/InfoCard/InfoCard";
+import { InfoCard } from "../../components/InfoCard";
 
 const PokemonInfo: NextPage = () => {
   const [pokemon, setPokemon] = useState<InfoData | null>(null);
