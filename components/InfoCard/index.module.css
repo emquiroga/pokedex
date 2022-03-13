@@ -6,7 +6,7 @@
     flex-flow: column wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: pink;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 1rem;
     overflow: hidden;
 }
@@ -17,7 +17,7 @@
     align-items: center;
 }
 .header__title {
-    margin: 1rem 0;
+    margin-top: 1rem;
     font-size: 2rem;
     font-weight: bold;
     text-transform: capitalize;
@@ -36,6 +36,34 @@
     align-items: center;
     gap: 1rem;
 }
+.type__name {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.info-card__body-container {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.base-info__wrapper, .abilities__wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.base-info__element, .abilities__title, .stats__title {
+    font-weight: bold;
+}
+.abilities__item, .stat__name {
+    text-transform: capitalize;
+    font-style: italic;
+}
 .info-card__stats-container {
     width: 100%;
     display: flex;
@@ -52,14 +80,14 @@
     justify-content: center;
     align-items: center;
 }
-.statbar-bg {
+.statbar__bg {
     width: 100%;
     height: 20px;
-    background-color: #e6e6e6;
+    background-color: #2d3142;
     border-radius: 3px;
     overflow: hidden;
 }
-.statbar-percent {
+.statbar__percent {
     height: 100%;
-    background-color: red;
+    background-color: #4f5d75;
 }

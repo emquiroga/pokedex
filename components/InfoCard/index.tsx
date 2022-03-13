@@ -25,7 +25,7 @@ export const InfoCard = ({
             return (
               <div key={name} className={styles["type__wrapper"]}>
                 <TypeIcon type={name} />
-                <p>{name}</p>
+                <p className={styles["type__name"]}>{name}</p>
               </div>
             );
           })}
@@ -34,13 +34,25 @@ export const InfoCard = ({
       <div className={styles["info-card__body-container"]}>
         <div className={styles["base-info__wrapper"]}>
           <ul>
-            <li>Base Experience: {base_experience}</li>
-            <li>Height: {height}</li>
-            <li>Weight: {weight}</li>
+            <li>
+              {" "}
+              <span className={styles["base-info__element"]}> Base Experience: </span>
+              {base_experience}
+            </li>
+            <li>
+              {" "}
+              <span className={styles["base-info__element"]}> Height: </span>
+              {height}
+            </li>
+            <li>
+              {" "}
+              <span className={styles["base-info__element"]}> Weight: </span>
+              {weight}
+            </li>
           </ul>
         </div>
         <div className={styles["abilities__wrapper"]}>
-          <h3 className={styles["abilities__title"]}>Abilities</h3>
+          <h3 className={styles["abilities__title"]}>Abilities:</h3>
           <ul className={styles["abilities__list"]}>
             {abilities.map(({ ability: { name } }) => (
               <li key={name} className={styles["abilities__item"]}>
@@ -51,13 +63,13 @@ export const InfoCard = ({
         </div>
       </div>
       <div className={styles["info-card__stats-container"]}>
-        <h3>Stats</h3>
+        <h3 className={styles["stats__title"]}>Stats:</h3>
         {stats.map(({ stat: { name }, base_stat }) => {
           return (
             <div key={name} className={styles["stat__wrapper"]}>
-              <h5>{name}</h5>
-              <div className={styles["statbar-bg"]}>
-                <div className={styles["statbar-percent"]} style={{ width: `${base_stat}%` }} />
+              <h5 className={styles["stat__name"]}>{name}</h5>
+              <div className={styles["statbar__bg"]}>
+                <div className={styles["statbar__percent"]} style={{ width: `${base_stat}%` }} />
               </div>
             </div>
           );
