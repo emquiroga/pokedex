@@ -52,7 +52,6 @@ export const InfoCard = ({
       </div>
       <div className={styles["info-card__stats-container"]}>
         <h3>Stats</h3>
-
         {stats.map(({ stat: { name }, base_stat }) => {
           return (
             <div key={name} className={styles["stat__wrapper"]}>
