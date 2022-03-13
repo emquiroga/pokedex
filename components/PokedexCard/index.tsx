@@ -19,7 +19,9 @@ export const PokedexCard = ({ name, image, id, types }: CardTypes) => {
         </div>
       )}
       <p className={styles["card-id"]}>{id}</p>
-      <Link href={`/pokemon/${id}`}>See more</Link>
+      <Link href={`/pokemon/${id}`} passHref={true}>
+        <p className={styles["card-link"]}>See more</p>
+      </Link>
     </div>
   );
 };
