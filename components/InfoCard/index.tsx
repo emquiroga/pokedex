@@ -67,7 +67,7 @@ export const InfoCard = ({
         {stats.map(({ stat: { name }, base_stat }) => {
           return (
             <div key={name} className={styles["stat__wrapper"]}>
-              <h5 className={styles["stat__name"]}>{name}</h5>
+              <h5 className={styles["stat__name"]}>{name}:</h5>
               <div className={styles["statbar__bg"]}>
                 <div className={styles["statbar__percent"]} style={{ width: `${base_stat}%` }} />
               </div>
