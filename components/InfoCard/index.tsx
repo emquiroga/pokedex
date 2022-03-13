@@ -42,12 +42,12 @@ export const InfoCard = ({
             <li>
               {" "}
               <span className={styles["base-info__element"]}> Height: </span>
-              {height}
+              {height.toString()}
             </li>
             <li>
               {" "}
               <span className={styles["base-info__element"]}> Weight: </span>
-              {weight}
+              {weight.toString()}
             </li>
           </ul>
         </div>
