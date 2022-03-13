@@ -9,6 +9,9 @@ import { getGenerationList } from "../../services/pokeService";
 import { generationRanges } from "../../helpers/generationRanges";
 import { Nav } from "../../components/Nav";
 import { Table } from "../../components/Table";
+import { generationName } from "../../helpers/generationName";
+
+import genStyles from "./index.module.css";
 
 type TableData = [
   {
@@ -18,22 +21,27 @@ type TableData = [
 ];
 
 const GenerationList: NextPage = () => {
+  const [generationList, setGenerationList] = useState<TableData | null>(null);
+  const [genName, setGenName] = useState<string | null>(null);
+
   const router = useRouter();
   const { gen } = router.query;
-
-  const [generation, setGeneration] = useState<TableData | null>(null);
 
   useEffect(() => {
     const { start, end } = generationRanges(gen as string);
 
     if (gen) {
+      const genName = generationName(gen as string);
+
       getGenerationList(start, end).then((data) => {
-        setGeneration(data.data.results);
+        setGenerationList(data.data.results);
+
+        setGenName(genName);
       });
     }
   }, [gen]);
 
-  const TITLES = ["Name", "See more"];
+  const TITLES = ["Name", "Actions"];
 
   return (
     <div className={styles.container}>
@@ -46,10 +54,8 @@ const GenerationList: NextPage = () => {
         <Nav />
       </header>
       <main className={styles.main}>
-        <h1 className={styles.title}> Selected Generation: </h1>
-        <p>{gen}</p>
-        <hr />
-        {generation && <Table data={generation} titles={TITLES} />}
+        {genName && <h1 className={genStyles["generation-name"]}> {genName} </h1>}
+        {generationList && <Table data={generationList} titles={TITLES} />}
       </main>
     </div>
   );
