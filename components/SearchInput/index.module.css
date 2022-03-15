@@ -1,0 +1,11 @@
+.search-input {
+    max-width: 400px;
+}
+.error-message {
+    padding: .75rem 1rem;
+    background-color: red;
+    margin: 0.5rem 0;
+    color: yellow;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
