@@ -1,8 +1,9 @@
 .form-group {
+    max-width: 400px;
+    margin: 0 auto;
     position: relative;
 }
 .search-input {
-    max-width: 400px;
     padding: .5rem 1.5rem;
 }
 .search-btn {
