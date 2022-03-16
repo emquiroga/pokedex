@@ -25,11 +25,18 @@
 .card-id {
     margin: 0;
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    top: 1rem;
+    left: 1.5rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
+}
+.card-link {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: white;
+    font-weight: bold;
 }
 .types-wrapper {
     width: 50%;

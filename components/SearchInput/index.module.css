@@ -1,11 +1,26 @@
+.form-group {
+    position: relative;
+}
 .search-input {
     max-width: 400px;
+    padding: .5rem 1.5rem;
+}
+.search-btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: gray;
 }
 .error-message {
-    padding: .75rem 1rem;
-    background-color: red;
+    padding: .5rem 1rem;
     margin: 0.5rem 0;
+    background-color: red;
+    display: block;
     color: yellow;
     font-weight: bold;
     border-radius: 0.5rem;
+    text-align: center;
 }
