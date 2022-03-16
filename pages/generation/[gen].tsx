@@ -41,8 +41,6 @@ const GenerationList: NextPage = () => {
     }
   }, [gen]);
 
-  const TITLES = ["Name", "Actions"];
-
   return (
     <div className={styles.container}>
       <Head>
@@ -55,7 +53,7 @@ const GenerationList: NextPage = () => {
       </header>
       <main className={styles.main}>
         {genName && <h1 className={genStyles["generation-name"]}> {genName} </h1>}
-        {generationList && <Table data={generationList} titles={TITLES} />}
+        {generationList && <Table data={generationList} titles={["Name", "Actions"]} />}
       </main>
     </div>
   );
