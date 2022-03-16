@@ -13,7 +13,7 @@ export type CardData = {
   ];
 };
 
-interface CardDataProps {
+export interface CardDataProps {
   id: number;
   name: string;
   sprites: {

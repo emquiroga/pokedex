@@ -1,5 +1,8 @@
 export interface SearchInputProps {
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
   placeholder: string;
   errorMessage: string | null;
+  submit: boolean;
+  debounce: boolean;
 }
