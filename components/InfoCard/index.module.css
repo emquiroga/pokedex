@@ -1,6 +1,6 @@
 .info-card-container{
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 3rem auto;
     display: flex;
     flex-flow: column wrap;
@@ -90,4 +90,12 @@
 .statbar__percent {
     height: 100%;
     background-color: #4f5d75;
+}
+/*TABLET*/
+@media screen and (min-width: 768px) {
+    .info-card__body-container {
+        width: 80%;
+        margin: auto;
+        flex-flow: row;
+    }
 }

@@ -19,7 +19,7 @@ export const InfoCard = ({
     <div className={styles["info-card-container"]}>
       <div className={styles["info-card__header-wrapper"]}>
         <h3 className={styles["header__title"]}>{name}</h3>
-        <Image alt="Mockeaditto" height={400} src={front_default} width={400} />
+        <Image alt={name} height={400} src={front_default} width={400} />
         <div className={styles["types-container"]}>
           {types.map(({ type: { name } }) => {
             return (
