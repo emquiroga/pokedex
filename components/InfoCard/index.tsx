@@ -7,18 +7,22 @@ import styles from "./index.module.css";
 
 export const InfoCard = ({
   name,
+  id,
   front_default,
   height,
   weight,
   abilities,
   stats,
   base_experience,
-  types,
+  types
 }: InfoData) => {
   return (
     <div className={styles["info-card-container"]}>
       <div className={styles["info-card__header-wrapper"]}>
-        <h3 className={styles["header__title"]}>{name}</h3>
+        <div className={styles["header-title"]}>
+          <h3 className={styles["title__name"]}>{name}</h3>
+          <h4 className={styles["title__number"]}>#{id}</h4>
+        </div>
         <Image alt={name} height={400} src={front_default} width={400} />
         <div className={styles["types-container"]}>
           {types.map(({ type: { name } }) => {

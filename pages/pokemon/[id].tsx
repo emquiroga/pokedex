@@ -24,6 +24,8 @@ const PokemonInfo: NextPage = () => {
         setPokemon(fetchedData);
       });
     }
+
+    return () => {};
   }, [id]);
 
   return (
@@ -44,6 +46,7 @@ const PokemonInfo: NextPage = () => {
             base_experience={pokemon.base_experience}
             front_default={pokemon.front_default}
             height={pokemon.height}
+            id={pokemon.id}
             name={pokemon.name}
             stats={pokemon.stats}
             types={pokemon.types}
