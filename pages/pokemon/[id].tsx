@@ -39,7 +39,6 @@ const PokemonInfo: NextPage = () => {
         <Nav />
       </header>
       <main className={styles.main}>
-        <h1 className={styles.title}> Pokemon info: </h1>
         {pokemon && (
           <InfoCard
             abilities={pokemon.abilities}
