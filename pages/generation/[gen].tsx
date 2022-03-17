@@ -1,46 +1,12 @@
 import type { NextPage } from "next";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
 
 import styles from "../../styles/Home.module.css";
-import { getGenerationList } from "../../services/pokeService";
-import { generationRanges } from "../../helpers/generationRanges";
 import { Nav } from "../../components/Nav";
-import { Table } from "../../components/Table";
-import { generationName } from "../../helpers/generationName";
-
-import genStyles from "./index.module.css";
-
-type TableData = [
-  {
-    name: string;
-    url: string;
-  },
-];
+import { GenerationsContainer } from "../../containers/Generations";
 
 const GenerationList: NextPage = () => {
-  const [generationList, setGenerationList] = useState<TableData | null>(null);
-  const [genName, setGenName] = useState<string | null>(null);
-
-  const router = useRouter();
-  const { gen } = router.query;
-
-  useEffect(() => {
-    const { start, end } = generationRanges(gen as string);
-
-    if (gen) {
-      const genName = generationName(gen as string);
-
-      getGenerationList(start, end).then((data) => {
-        setGenerationList(data.data.results);
-
-        setGenName(genName);
-      });
-    }
-  }, [gen]);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -52,8 +18,7 @@ const GenerationList: NextPage = () => {
         <Nav />
       </header>
       <main className={styles.main}>
-        {genName && <h1 className={genStyles["generation-name"]}> {genName} </h1>}
-        {generationList && <Table data={generationList} titles={["Name", "Actions"]} />}
+        <GenerationsContainer />
       </main>
     </div>
   );
