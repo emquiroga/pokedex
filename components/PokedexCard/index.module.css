@@ -21,6 +21,7 @@
 }
 .card-img {
     margin: 1rem auto;
+    cursor: pointer;
 }
 .card-id {
     margin: 0;
@@ -30,6 +31,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
+    cursor: pointer;
 }
 .card-link {
     position: absolute;
@@ -37,6 +39,7 @@
     right: 1rem;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 .types-container {
     width: 50%;

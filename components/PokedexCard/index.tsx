@@ -10,7 +10,11 @@ export const PokedexCard = ({ name, image, id, types }: CardTypes) => {
   return (
     <div className={styles["card-wrapper"]}>
       <h1 className={styles["card-title"]}>{name}</h1>
-      <Image alt={name} height="200" src={image} width="200" />
+      <Link href={`/pokemon/${id}`} passHref={true}>
+        <span className={styles["card-img"]}>
+          <Image alt={name} height="200" src={image} width="200" />
+        </span>
+      </Link>
       {types && (
         <div className={styles["types-container"]}>
           {types.map(({ type: { name } }) => {
@@ -22,7 +26,9 @@ export const PokedexCard = ({ name, image, id, types }: CardTypes) => {
           })}
         </div>
       )}
-      <p className={styles["card-id"]}>#{id}</p>
+      <Link href={`/pokemon/${id}`} passHref={true}>
+        <p className={styles["card-id"]}>#{id}</p>
+      </Link>
       <Link href={`/pokemon/${id}`} passHref={true}>
         <p className={styles["card-link"]}>See more</p>
       </Link>
