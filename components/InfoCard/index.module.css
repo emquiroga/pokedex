@@ -1,15 +1,21 @@
 .info-card-container{
     width: 100%;
     max-width: 700px;
-    margin: 3rem auto;
+    margin: auto;
     padding-bottom: 1rem;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    background-color: rgba(0, 0,0, 0.5);
     border-radius: 1rem;
     overflow: hidden;
+}
+.desktop-topsection-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
 }
 .info-card__header-wrapper {
     display: flex;
@@ -96,6 +102,7 @@
     width: 100%;
     height: 20px;
     background-color: #2d3142;
+    border: 1px solid white;
     border-radius: 3px;
     overflow: hidden;
 }
@@ -109,5 +116,51 @@
         width: 80%;
         margin: auto;
         flex-flow: row;
+        font-size: 1.2rem;
+    }
+    .info-card__stats-container {
+        font-size: 1.25rem;
+    }
+    .title__name {
+        font-size: 3rem;
+    }
+    .title__number {
+        font-size: 2.5rem;
+    }
+    .stat__wrapper {
+        align-items: flex-start;
+    }
+    .statbar__bg {
+        height: 30px;
+    }
+}
+/*DESKTOP*/
+@media screen and (min-width: 1024px) {
+    .info-card-container {
+        max-width: 1000px;
+    }
+    .header-title {
+        width: 50%;
+        margin: 1rem auto;
+    }
+    .desktop-topsection-container {
+        width: 80%;
+        margin: auto;
+        flex-flow: row;
+        gap: 2rem;
+    }
+    .info-card__body-container {
+        max-width: 50%;
+        gap: 3rem;
+        flex-flow: column wrap;
+    }
+    .info-card__stats-container {
+        font-size: 2.25rem;
+    }
+    .stat__wrapper {
+        font-size: 1.25rem;
+    }
+    .base-info__wrapper, .abilities__wrapper {
+        align-items: flex-start;
     }
 }
