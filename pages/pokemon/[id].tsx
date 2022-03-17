@@ -24,6 +24,8 @@ const PokemonInfo: NextPage = () => {
         setPokemon(fetchedData);
       });
     }
+
+    return () => {};
   }, [id]);
 
   return (
@@ -37,13 +39,13 @@ const PokemonInfo: NextPage = () => {
         <Nav />
       </header>
       <main className={styles.main}>
-        <h1 className={styles.title}> Pokemon info: </h1>
         {pokemon && (
           <InfoCard
             abilities={pokemon.abilities}
             base_experience={pokemon.base_experience}
             front_default={pokemon.front_default}
             height={pokemon.height}
+            id={pokemon.id}
             name={pokemon.name}
             stats={pokemon.stats}
             types={pokemon.types}

@@ -1,44 +1,12 @@
 import type { NextPage } from "next";
 
-import { useEffect, useState } from "react";
 import Head from "next/head";
 
-import { PokedexCard } from "../components/PokedexCard";
-import { PokedexLayout } from "../components/PokedexLayout";
-import { useDebounceSearch } from "../hooks/useDebounceSearch";
-import { fetchCardData, CardData } from "../services/fetchCardData";
-import { getPokemonByName } from "../services/pokeService";
 import styles from "../styles/Home.module.css";
 import { Nav } from "../components/Nav";
-import { SearchInput } from "../components/SearchInput";
+import { HomeContainer } from "../containers/Home";
 
 const Home: NextPage = () => {
-  const [search, setSearch] = useState("");
-  const [pokemon, setPokemon] = useState<CardData | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  const searchValue = useDebounceSearch(search.toLowerCase(), 400);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
-
-  useEffect(() => {
-    if (searchValue.length > 2) {
-      getPokemonByName(searchValue)
-        .then((data) => {
-          const fetchedData = fetchCardData(data.data);
-
-          setPokemon(fetchedData);
-          setError(null);
-        })
-        .catch(() => {
-          setError("Pokémon not found");
-          setPokemon(null);
-        });
-    }
-  }, [searchValue]);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -48,25 +16,8 @@ const Home: NextPage = () => {
       </Head>
       <header>
         <Nav />
+        <HomeContainer />
       </header>
-      <main className={styles.main}>
-        <h1 className={styles.title}> Pokedex </h1>
-        <SearchInput
-          errorMessage={error}
-          handleChange={handleSearch}
-          placeholder="Search your Pokémon here!"
-        />
-        {pokemon && (
-          <PokedexLayout>
-            <PokedexCard
-              id={pokemon.id}
-              image={pokemon.front_default}
-              name={pokemon.name}
-              types={pokemon.types}
-            />
-          </PokedexLayout>
-        )}
-      </main>
     </div>
   );
 };
