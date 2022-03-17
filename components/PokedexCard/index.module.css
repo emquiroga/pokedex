@@ -38,15 +38,16 @@
     color: white;
     font-weight: bold;
 }
-.types-wrapper {
+.types-container {
     width: 50%;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     justify-content: center;
     align-items: flex-start;
-    transform: rotate(135deg);
-    gap: 5px;
     position: absolute;
-    bottom: -.5rem;
-    left: -1.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+}
+.type-wrapper:nth-child(2) {
+    margin-top: 2rem;
 }
