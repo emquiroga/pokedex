@@ -1,16 +1,45 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
+import { Table } from "../../components/Table";
 import { GenerationContext } from "../../context/generation/GenerationContext";
-import { GenerationProvider } from "../../context/generation/GenerationProvider";
+import { generationName } from "../../helpers/generationName";
+import { generationRanges } from "../../helpers/generationRanges";
+import { getGenerationList } from "../../services/pokeService";
 
-export const GenerationsContainer = () => {
-  const { generationState, setGeneration } = useContext(GenerationContext);
+import styles from "./index.module.css";
+import { IGenerationContainer } from "./interface";
 
-  console.log(generationState);
+export const GenerationsContainer = ({ genProp }: IGenerationContainer) => {
+  const {
+    generationState: { generation, pokemonList },
+    setGeneration
+  } = useContext(GenerationContext);
+
+  useEffect(() => {
+    const { start, end } = generationRanges(genProp as string);
+
+    if (genProp) {
+      let genName = generationName(genProp as string);
+
+      getGenerationList(start, end).then((data) => {
+        setGeneration({
+          generation: genName,
+          pokemonList: data.data.results
+        });
+      });
+    }
+
+    return () => {};
+  }, [genProp, setGeneration]);
 
   return (
-    <GenerationProvider>
-      <h1>Gen Container</h1>
-    </GenerationProvider>
+    <>
+      {pokemonList && (
+        <>
+          <h1 className={styles["generation-name"]}>{generation}</h1>
+          <Table data={pokemonList} titles={["Name", "Actions"]} />
+        </>
+      )}
+    </>
   );
 };
