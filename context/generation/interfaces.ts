@@ -5,5 +5,12 @@ export interface PokemonProps {
 
 export interface GenerationStateProps {
   generation: string;
-  pokemonList: [] | PokemonProps[];
+  pokemonList:
+    | []
+    | [
+        {
+          name: string;
+          url: string;
+        }
+      ];
 }
