@@ -3,12 +3,14 @@ import Link from "next/link";
 import styles from "./index.module.css";
 interface TableProps {
   titles: string[];
-  data: [
-    {
-      name: string;
-      url: string;
-    },
-  ];
+  data:
+    | [
+        {
+          name: string;
+          url: string;
+        }
+      ]
+    | [];
 }
 
 const getPokeNumber = (url: string) => {
