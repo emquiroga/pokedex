@@ -1,12 +1,17 @@
 import type { NextPage } from "next";
 
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import styles from "../../styles/Home.module.css";
 import { Nav } from "../../components/Nav";
 import { GenerationsContainer } from "../../containers/Generations";
+import { GenerationProvider } from "../../context/generation/GenerationProvider";
 
 const GenerationList: NextPage = () => {
+  const router = useRouter();
+  const { gen } = router.query;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,9 +22,9 @@ const GenerationList: NextPage = () => {
       <header>
         <Nav />
       </header>
-      <main className={styles.main}>
-        <GenerationsContainer />
-      </main>
+      <GenerationProvider>
+        <main className={styles.main}>{gen && <GenerationsContainer genProp={gen} />}</main>
+      </GenerationProvider>
     </div>
   );
 };
