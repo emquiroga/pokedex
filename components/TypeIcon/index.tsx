@@ -1,7 +1,7 @@
-import { typeToColor } from "../../helpers/typeToColor";
+import Image from "next/image";
 
-import styles from "./index.module.css";
+import { iconSelector } from "../../helpers/iconSelector";
 
 export const TypeIcon = ({ type }: { type: string }) => {
-  return <span className={styles["type-shape"]} style={{ backgroundColor: typeToColor(type) }} />;
+  return <Image alt={type as string} height={50} src={iconSelector(type as string)} width={50} />;
 };

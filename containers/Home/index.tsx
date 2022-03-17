@@ -27,11 +27,12 @@ export const HomeContainer = () => {
           setError("Pokemon not found");
         });
     }
+
+    return () => {};
   }, [searchTerm]);
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}> Pokedex </h1>
       <SearchInput
         debounce={false}
         errorMessage={error}

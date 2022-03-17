@@ -1,5 +1,6 @@
 export type InfoData = {
   name: string;
+  id: number;
   front_default: string;
   height: number;
   weight: number;
@@ -8,7 +9,7 @@ export type InfoData = {
       ability: {
         name: string;
       };
-    },
+    }
   ];
   stats: [
     {
@@ -16,7 +17,7 @@ export type InfoData = {
       stat: {
         name: string;
       };
-    },
+    }
   ];
   base_experience: number;
   types: [
@@ -25,12 +26,13 @@ export type InfoData = {
         name: string;
         url: string;
       };
-    },
+    }
   ];
 };
 
 interface InfoDataProps {
   name: string;
+  id: number;
   sprites: {
     front_default: string;
   };
@@ -41,7 +43,7 @@ interface InfoDataProps {
       ability: {
         name: string;
       };
-    },
+    }
   ];
   stats: [
     {
@@ -49,7 +51,7 @@ interface InfoDataProps {
       stat: {
         name: string;
       };
-    },
+    }
   ];
   base_experience: number;
   types: [
@@ -58,21 +60,22 @@ interface InfoDataProps {
         name: string;
         url: string;
       };
-    },
+    }
   ];
 }
 
 export const fetchInfoData = (data: InfoDataProps) => {
   const {
     name,
+    id,
     sprites: { front_default },
     height,
     weight,
     abilities,
     stats,
     base_experience,
-    types,
+    types
   } = data;
 
-  return { name, front_default, height, weight, abilities, stats, base_experience, types };
+  return { id, name, front_default, height, weight, abilities, stats, base_experience, types };
 };
