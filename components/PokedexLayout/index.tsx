@@ -1,9 +1,7 @@
-import { ReactChildren } from "react";
-
 import styles from "./index.module.css";
 
 interface PokedexLayoutProps {
-  children: JSX.Element | ReactChildren;
+  children: JSX.Element | JSX.Element[];
 }
 
 export const PokedexLayout = ({ children }: PokedexLayoutProps) => {

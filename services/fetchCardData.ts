@@ -9,11 +9,11 @@ export type CardData = {
         name: string;
         url: string;
       };
-    },
+    }
   ];
 };
 
-interface CardDataProps {
+export interface CardDataProps {
   id: number;
   name: string;
   sprites: {
@@ -26,7 +26,7 @@ interface CardDataProps {
         name: string;
         url: string;
       };
-    },
+    }
   ];
 }
 
@@ -35,7 +35,7 @@ export const fetchCardData = (data: CardDataProps) => {
     id,
     name,
     sprites: { front_default },
-    types,
+    types
   } = data;
 
   return { id, name, front_default, types };
