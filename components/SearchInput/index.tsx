@@ -9,7 +9,7 @@ export const SearchInput = ({
   placeholder,
   errorMessage,
   debounce,
-  submit,
+  submit
 }: SearchInputProps) => {
   if (debounce) {
     return (

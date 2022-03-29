@@ -4,16 +4,12 @@ import { Menu, Transition } from "@headlessui/react";
 
 import { NAVIGATION_ITEMS, POKEMON_GENERATIONS } from "../../constants/constants";
 
-// interface NavProps {
-//     children: JSX.Element | React.ReactNode;
-//     href: string;
-//     isActive: boolean;
-// }
+import styles from "./index.module.css";
 
 export const Nav = () => {
   return (
     <nav className="py-4 px-6 text-sm font-medium">
-      <ul className="flex space-x-3">
+      <ul className="flex justify-end space-x-3">
         {NAVIGATION_ITEMS.map(({ url, name }, index) => {
           return (
             <li key={index}>
@@ -37,8 +33,10 @@ export const Nav = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <div className="py-1">
+              <Menu.Items
+                className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+              >
+                <div className={`py-4 gap-1 ${styles["generations-wrapper"]}`}>
                   {POKEMON_GENERATIONS.map((generation) => (
                     <Menu.Item key={generation}>
                       <li>
