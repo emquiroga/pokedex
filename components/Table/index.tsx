@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import styles from "./index.module.css";
 interface TableProps {
   titles: string[];
   data:
@@ -19,11 +18,14 @@ const getPokeNumber = (url: string) => {
 
 export const Table = ({ titles, data }: TableProps) => {
   return (
-    <table className={`table-auto ${styles["table"]}`}>
+    <table className="table-auto bg-lightRed">
       <thead>
         <tr>
           {titles.map((title, index) => (
-            <th key={index} className="border px-4 py-2">
+            <th
+              key={index}
+              className="border px-4 py-2 font-primary font-bold text-medium text-black"
+            >
               {title}
             </th>
           ))}
@@ -32,9 +34,11 @@ export const Table = ({ titles, data }: TableProps) => {
       <tbody>
         {data.map((item, index) => {
           return (
-            <tr key={index} className={styles["single-row"]}>
-              <td className={`border px-4 py-2 ${styles["pokemon-name"]}`}>{item.name}</td>
-              <td className="border px-4 py-2">
+            <tr key={index} className="odd:bg-darkRed">
+              <td className="border px-4 py-2 capitalize font-small font-semibold text-primary text-black">
+                {item.name}
+              </td>
+              <td className="border px-4 py-2 capitalize font-small text-primary transition-all text-black hover:underline">
                 <Link href={`/pokemon/${getPokeNumber(item.url)}`}>See more</Link>
               </td>
             </tr>

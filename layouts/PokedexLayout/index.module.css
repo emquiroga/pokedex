@@ -4,11 +4,11 @@
     margin: 5rem auto 0 auto;
     display: block;
     position: relative;
-    background-color: red;
+    background-color: #D62839;
 }
 .top-shape {
     width: 30px;
-    border-bottom: 50px solid red;
+    border-bottom: 50px solid #D62839;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     height: 0;
@@ -19,7 +19,7 @@
 }
 .bottom-shape {
     width: 30px;
-    border-top: 50px solid red;
+    border-top: 50px solid #D62839;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     height: 0;
