@@ -35,7 +35,7 @@ export const GenerationsContainer = ({ genProp }: IGenerationContainer) => {
           <h1 className="my-4 text-secondary text-xlarge font-bold uppercase text-lightRed">
             {generation}
           </h1>
-          <Table data={pokemonList} titles={["Name", "Actions"]} />
+          <Table data={pokemonList} titles={["N°", "Name"]} />
         </>
       )}
     </>
