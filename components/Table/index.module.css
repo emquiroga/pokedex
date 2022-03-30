@@ -1,9 +1,0 @@
-.table {
-    color: white;
-}
-.pokemon-name {
-    text-transform: capitalize;
-}
-.single-row:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.6);
-}

@@ -1,3 +1,3 @@
 export interface IGenerationContainer {
-  genProp: string | string[];
+  genProp: string | number;
 }

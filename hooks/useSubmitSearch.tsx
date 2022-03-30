@@ -5,7 +5,7 @@ export const useSubmitSearch = () => {
   const [searchTerm, setSearchTerm] = useState<null | string>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.trim().toLowerCase());
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

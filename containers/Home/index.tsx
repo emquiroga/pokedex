@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 
 import { PokedexCard } from "../../components/PokedexCard";
-import { PokedexLayout } from "../../components/PokedexLayout";
+import { PokedexLayout } from "../../layouts/PokedexLayout";
 import { SearchInput } from "../../components/SearchInput";
 import { useSubmitSearch } from "../../hooks/useSubmitSearch";
 import { CardData, fetchCardData } from "../../services/fetchCardData";
 import { getPokemonByName } from "../../services/pokeService";
-import styles from "../../styles/Home.module.css";
 
 export const HomeContainer = () => {
   const { handleChange, handleSubmit, searchTerm } = useSubmitSearch();
@@ -32,7 +31,7 @@ export const HomeContainer = () => {
   }, [searchTerm]);
 
   return (
-    <main className={styles.main}>
+    <>
       <SearchInput
         debounce={false}
         errorMessage={error}
@@ -51,6 +50,6 @@ export const HomeContainer = () => {
           />
         </PokedexLayout>
       )}
-    </main>
+    </>
   );
 };
