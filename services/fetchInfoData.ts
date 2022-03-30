@@ -34,7 +34,11 @@ interface InfoDataProps {
   name: string;
   id: number;
   sprites: {
-    front_default: string;
+    other: {
+      ["official-artwork"]: {
+        front_default: string;
+      };
+    };
   };
   height: number;
   weight: number;
@@ -68,7 +72,11 @@ export const fetchInfoData = (data: InfoDataProps) => {
   const {
     name,
     id,
-    sprites: { front_default },
+    sprites: {
+      other: {
+        ["official-artwork"]: { front_default }
+      }
+    },
     height,
     weight,
     abilities,

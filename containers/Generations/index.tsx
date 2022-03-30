@@ -6,7 +6,6 @@ import { generationName } from "../../helpers/generationName";
 import { generationRanges } from "../../helpers/generationRanges";
 import { getGenerationList } from "../../services/pokeService";
 
-import styles from "./index.module.css";
 import { IGenerationContainer } from "./interface";
 
 export const GenerationsContainer = ({ genProp }: IGenerationContainer) => {
@@ -16,30 +15,27 @@ export const GenerationsContainer = ({ genProp }: IGenerationContainer) => {
   } = useContext(GenerationContext);
 
   useEffect(() => {
-    const { start, end } = generationRanges(genProp as string);
+    let { start, end } = generationRanges(genProp as string);
+    let genName = generationName(genProp as string);
 
-    if (genProp) {
-      let genName = generationName(genProp as string);
-
-      getGenerationList(start, end).then((data) => {
-        setGeneration({
-          generation: genName,
-          pokemonList: data.data.results
-        });
+    getGenerationList(start, end).then((data) => {
+      setGeneration({
+        generation: genName,
+        pokemonList: data.data.results
       });
-    }
+    });
 
     return () => {};
   }, [genProp, setGeneration]);
 
   return (
     <>
-      {pokemonList && (
+      {pokemonList && generation && (
         <>
           <h1 className="my-4 text-secondary text-xlarge font-bold uppercase text-lightRed">
             {generation}
           </h1>
-          <Table data={pokemonList} titles={["Name", "Actions"]} />
+          <Table data={pokemonList} titles={["N°", "Name"]} />
         </>
       )}
     </>

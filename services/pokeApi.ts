@@ -3,8 +3,8 @@ import axios from "axios";
 const config = {
   baseUrl: "https://pokeapi.co/api/v2/pokemon/",
   headers: {
-    Accept: "application/json",
-  },
+    Accept: "application/json"
+  }
 };
 
 const instance = axios.create(config);
@@ -15,7 +15,7 @@ instance.interceptors.response.use(
   },
   function (error) {
     return Promise.reject(error);
-  },
+  }
 );
 
 export type Get = (url: string, param?: string) => Promise<any>;

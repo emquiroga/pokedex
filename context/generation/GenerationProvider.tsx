@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useCallback, useReducer } from "react";
 
 import { generationReducer } from "./generationReducer";
 import { GenerationContext } from "./GenerationContext";
@@ -16,7 +16,7 @@ type GenerationProviderProps = {
 export const GenerationProvider = ({ children }: GenerationProviderProps) => {
   const [generationState, dispatch] = useReducer(generationReducer, INITIAL_STATE);
 
-  const setGeneration = ({ generation, pokemonList }: GenerationStateProps) => {
+  const setGeneration = useCallback(({ generation, pokemonList }: GenerationStateProps) => {
     dispatch({
       type: "SET_GENERATION",
       payload: {
@@ -24,7 +24,7 @@ export const GenerationProvider = ({ children }: GenerationProviderProps) => {
         pokemonList
       }
     });
-  };
+  }, []);
 
   return (
     <GenerationContext.Provider

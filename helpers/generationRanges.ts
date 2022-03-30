@@ -45,7 +45,7 @@ export const generationRanges = (generation: string) => {
     default:
       return {
         start: 0,
-        end: 898
+        end: 0
       };
   }
 };
