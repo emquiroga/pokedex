@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import { useMemo } from "react";
 
 import { Table } from "../../components/Table";
 import { GenerationContext } from "../../context/generation/GenerationContext";
