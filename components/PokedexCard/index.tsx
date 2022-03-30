@@ -9,7 +9,9 @@ import { CardTypes } from "./types";
 export const PokedexCard = ({ name, image, id, types }: CardTypes) => {
   return (
     <div className={styles["card-wrapper"]}>
-      <h1 className={styles["card-title"]}>{name}</h1>
+      <h1 className={`font-secondary font-bold text-gray text-xlarge ${styles["card-title"]}`}>
+        {name}
+      </h1>
       <Link href={`/pokemon/${id}`} passHref={true}>
         <span className={styles["card-img"]}>
           <Image alt={name} height="200" src={image} width="200" />
@@ -27,10 +29,12 @@ export const PokedexCard = ({ name, image, id, types }: CardTypes) => {
         </div>
       )}
       <Link href={`/pokemon/${id}`} passHref={true}>
-        <p className={styles["card-id"]}>#{id}</p>
+        <p className={`font-secondary text-medium text-lightRed font-bold ${styles["card-id"]}`}>
+          #{id}
+        </p>
       </Link>
       <Link href={`/pokemon/${id}`} passHref={true}>
-        <p className={styles["card-link"]}>See more</p>
+        <p className={`font-primary text-small text-gray ${styles["card-link"]}`}>See more</p>
       </Link>
     </div>
   );

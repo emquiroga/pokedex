@@ -8,14 +8,11 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: #175676;
     overflow: hidden;
     transition: all ease-in-out 250ms;
 }
 .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
     text-align: center;
     text-transform: capitalize;
 }
@@ -28,17 +25,12 @@
     position: absolute;
     top: 1rem;
     left: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
     cursor: pointer;
 }
 .card-link {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
-    color: white;
-    font-weight: bold;
     cursor: pointer;
 }
 .types-container {
