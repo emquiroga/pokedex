@@ -16,6 +16,18 @@ const PokemonInfo: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
+  const handleNext = () => {
+    if (Number(id) < 898) {
+      router.push(`/pokemon/${Number(id) + 1}`);
+    }
+  };
+
+  const handlePrev = () => {
+    if (Number(id) > 1) {
+      router.push(`/pokemon/${Number(id) - 1}`);
+    }
+  };
+
   useEffect(() => {
     if (id) {
       getPokemonByNumber(id as string).then((data) => {
@@ -44,6 +56,8 @@ const PokemonInfo: NextPage = () => {
             abilities={pokemon.abilities}
             base_experience={pokemon.base_experience}
             front_default={pokemon.front_default}
+            handleNext={handleNext}
+            handlePrev={handlePrev}
             height={pokemon.height}
             id={pokemon.id}
             name={pokemon.name}
