@@ -98,10 +98,12 @@ const About: NextPage = () => {
               For any commentary, collaboration or doubt, feel free to contact me.
             </p>
             <Link href="https://github.com/emquiroga" passHref={true}>
-              <FontAwesomeIcon
-                className="w-12 m-auto text-gray transition-all cursor-pointer hover:text-lightRed"
-                icon={faGithub}
-              />
+              <span>
+                <FontAwesomeIcon
+                  className="w-12 m-auto text-gray transition-all cursor-pointer hover:text-lightRed"
+                  icon={faGithub}
+                />
+              </span>
             </Link>
           </div>
         </section>
