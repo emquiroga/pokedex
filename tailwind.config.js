@@ -9,7 +9,10 @@ module.exports = {
       lightBlue: "#4BA3C3",
       gray: "#CCE6F4",
       white: "#FFFFFF",
-      black: "#000000"
+      black: "#000000",
+      rotomRed: "#FB4737",
+      rotomBlue: "#A6CFD5",
+      rotomGray: "#cde6f459"
     },
     fontSize: {
       small: "clamp(16px, 4vw, 20px)",

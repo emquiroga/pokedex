@@ -6,7 +6,7 @@ interface PokedexLayoutProps {
 
 export const PokedexLayout = ({ children }: PokedexLayoutProps) => {
   return (
-    <div className={`${styles["pokedex_outer_shape"]}`}>
+    <div className={`rounded-xl ${styles["pokedex_outer_shape"]}`}>
       <span className={styles["top-shape"]} />
       {children}
       <span className={styles["bottom-shape"]} />

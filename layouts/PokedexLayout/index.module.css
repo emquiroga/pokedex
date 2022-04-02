@@ -1,14 +1,15 @@
 .pokedex_outer_shape {
     width: 80%;
+    height: 416px;
     max-width: 800px;
     margin: 5rem auto 0 auto;
     display: block;
     position: relative;
-    background-color: #D62839;
+    background-color: #FB4737;
 }
 .top-shape {
     width: 30px;
-    border-bottom: 50px solid #D62839;
+    border-bottom: 50px solid #FB4737;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     height: 0;
@@ -19,7 +20,7 @@
 }
 .bottom-shape {
     width: 30px;
-    border-top: 50px solid #D62839;
+    border-top: 50px solid #FB4737;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     height: 0;

@@ -1,0 +1,83 @@
+.rotom-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.camara-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border: 10px solid #175676;
+}
+.face-circle {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 2px solid rgb(70, 55, 55);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.face-eyes-container {
+    width: 240px;
+    height: 240px;
+    justify-content: center;
+    gap: 3rem;
+    position: absolute;
+    top: 45px;
+}
+.face-eyes {
+    width: 75px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #000;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.face-eyes:first-of-type {
+    transform: rotate(-15deg);
+}
+.face-eyes:nth-of-type(2) {
+    transform: rotate(15deg);
+}
+.face-eyes-inner {
+    width: 45px;
+    height: 107px;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #000;
+    overflow: hidden;
+}
+.face-smile-container {
+    width: 140px;
+    height: 35px;
+    margin-top: 3rem;
+    justify-content: center;
+    gap: .5rem;
+    border-radius: 10px 10px 100px 100px;
+    transform: rotate(-5deg);
+}
+.smile-left,
+.smile-mid,
+.smile-right {
+    width: 25px;
+    height: 45px;
+}
+.smile-left {
+    clip-path: polygon(1% 0, 94% 8%, 50% 69%, 3% 97%);
+}
+.smile-mid {
+    clip-path: polygon(5% 19%, 87% 11%, 94% 87%, 3% 97%);
+}
+.smile-right {
+    clip-path: polygon(1% 11%, 100% 1%, 60% 58%, 8% 96%);
+}
