@@ -8,22 +8,20 @@
     background-color: #FB4737;
 }
 .top-shape {
-    width: 30px;
-    border-bottom: 50px solid #FB4737;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    height: 0;
+    width: 90px;
+    height: 140px;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -100%);
+    background-color: #FB4737;
+    clip-path: polygon(100% 0, 90% 0, 100% 0, 98% 68%, 60% 55%, 88% 100%, 0 100%, 38% 21%, 67% 36%, 97% 0);
 }
 .bottom-shape {
-    width: 30px;
-    border-top: 50px solid #FB4737;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    height: 0;
+    width: 75px;
+    height: 100px;
+    background-color: #FB4737;
+    clip-path: polygon(0% 0%, 100% 0, 84% 75%, 50% 91%, 17% 75%);
     position: absolute;
     bottom: 0;
     left: 50%;

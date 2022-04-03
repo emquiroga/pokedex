@@ -4,12 +4,12 @@ export const NAVIGATION_ITEMS = [
     url: "/"
   },
   {
-    name: "About",
-    url: "/about"
-  },
-  {
     name: "Types",
     url: "/types"
+  },
+  {
+    name: "About",
+    url: "/about"
   }
 ];
 

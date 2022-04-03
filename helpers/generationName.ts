@@ -17,6 +17,6 @@ export const generationName = (generationNumber: string) => {
     case "8":
       return "Galar";
     default:
-      return "This generation does not exist";
+      return "All generations";
   }
 };

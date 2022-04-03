@@ -1,0 +1,35 @@
+.mobile-nav {
+    display: none;
+    width: 100%;
+}
+.open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+.mobile-button {
+    z-index: 1000;
+}
+.mobile-list-item {
+    margin: 0 !important;
+    padding: 0;
+}
+.mobile-generations {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 1024px) {
+    .mobile-nav,
+    .mobile-button,
+    .open {
+        display: none;
+    }
+}

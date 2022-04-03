@@ -27,7 +27,7 @@ export const SearchInput = ({
   }
   if (submit) {
     return (
-      <form className="w-80 mx-auto" onSubmit={handleSubmit}>
+      <form className="w-80 mb-32 mx-auto" onSubmit={handleSubmit}>
         <div className={styles["form-group"]}>
           <input
             aria-label="Search Pokémon"
