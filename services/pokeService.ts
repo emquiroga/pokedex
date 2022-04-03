@@ -13,3 +13,7 @@ export const getPokemonByNumber = (number: string) => {
 export const getGenerationList = (start: number, end: number) => {
   return get(`${ENDPOINT}pokemon?limit=${end}&offset=${start}`);
 };
+
+export const getTypes = (type: string) => {
+  return get(`${ENDPOINT}type/${type}`);
+};

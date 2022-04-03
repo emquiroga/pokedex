@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const config = {
-  baseUrl: "https://pokeapi.co/api/v2/pokemon/",
   headers: {
     Accept: "application/json"
   }

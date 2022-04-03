@@ -4,9 +4,11 @@ import { Menu, Transition } from "@headlessui/react";
 
 import { NAVIGATION_ITEMS, POKEMON_GENERATIONS } from "../../constants/constants";
 
-export const Nav = () => {
+import styles from "./index.module.css";
+
+export const DesktopNav = () => {
   return (
-    <nav className="w-full py-4 bg-lightBlue text-sm font-medium">
+    <nav className={`w-full py-4 bg-lightBlue text-sm font-medium ${styles["desktop-nav"]}`}>
       <ul className="flex justify-end space-x-3">
         {NAVIGATION_ITEMS.map(({ url, name }, index) => {
           return (

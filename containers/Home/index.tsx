@@ -6,10 +6,11 @@ import { SearchInput } from "../../components/SearchInput";
 import { useSubmitSearch } from "../../hooks/useSubmitSearch";
 import { CardData, fetchCardData } from "../../services/fetchCardData";
 import { getPokemonByName } from "../../services/pokeService";
+import { RotomLayout } from "../../layouts/RotomLayout";
 
 export const HomeContainer = () => {
   const { handleChange, handleSubmit, searchTerm } = useSubmitSearch();
-  const [pokemon, setPokemon] = useState<CardData | null>(null);
+  const [pokemon, setPokemon] = useState<CardData | null>();
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export const HomeContainer = () => {
         placeholder="Search your Pokémon here!"
         submit={true}
       />
-      {pokemon && (
+      {pokemon ? (
         <PokedexLayout>
           <PokedexCard
             id={pokemon.id}
@@ -48,6 +49,10 @@ export const HomeContainer = () => {
             name={pokemon.name}
             types={pokemon.types}
           />
+        </PokedexLayout>
+      ) : (
+        <PokedexLayout>
+          <RotomLayout />
         </PokedexLayout>
       )}
     </>

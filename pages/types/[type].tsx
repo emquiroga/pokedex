@@ -1,16 +1,15 @@
-import type { NextPage } from "next";
-
+import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { GenerationsContainer } from "../../containers/Generations";
-import { GenerationProvider } from "../../context/generation/GenerationProvider";
+import { TypeContainer } from "../../containers/Type";
+import { TypeProvider } from "../../context/type/TypeProvider";
 import HeaderLayout from "../../layouts/HeaderLayout";
 import { MainLayout } from "../../layouts/MainLayout";
 
-const GenerationList: NextPage = () => {
+const TypePage: NextPage = () => {
   const router = useRouter();
-  const { gen } = router.query;
+  const { type } = router.query;
 
   return (
     <div className="app-container">
@@ -20,13 +19,13 @@ const GenerationList: NextPage = () => {
         <link href="/favicon.ico" rel="icon" />
       </Head>
       <HeaderLayout />
-      <GenerationProvider>
+      <TypeProvider>
         <MainLayout>
-          <GenerationsContainer genProp={gen as string} />
+          <TypeContainer type={type as string} />
         </MainLayout>
-      </GenerationProvider>
+      </TypeProvider>
     </div>
   );
 };
 
-export default GenerationList;
+export default TypePage;

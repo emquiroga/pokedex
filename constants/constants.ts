@@ -4,9 +4,34 @@ export const NAVIGATION_ITEMS = [
     url: "/"
   },
   {
+    name: "Types",
+    url: "/types"
+  },
+  {
     name: "About",
     url: "/about"
   }
+];
+
+export const TYPES = [
+  "normal",
+  "fighting",
+  "flying",
+  "poison",
+  "ground",
+  "rock",
+  "bug",
+  "ghost",
+  "steel",
+  "fire",
+  "water",
+  "grass",
+  "electric",
+  "psychic",
+  "ice",
+  "dragon",
+  "dark",
+  "fairy"
 ];
 
 export const POKEMON_GENERATIONS = [1, 2, 3, 4, 5, 6, 7, 8];
